@@ -1,0 +1,16 @@
+
+binaries/
+
+cm-lib/build/
+
+cm-lib/Makefile
+
+cm-ui/build/
+
+cm-ui/Makefile
+
+cm-solution\.pro\.user
+
+Makefile
+
+\.qmake\.stash
