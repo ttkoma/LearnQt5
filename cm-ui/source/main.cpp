@@ -4,7 +4,9 @@
 
 #include <cm-lib_global.h>
 #include <controllers/master-controller.h>
+#include <controllers/navigation-controller.h>
 
+#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -18,6 +20,8 @@ int main(int argc, char *argv[])
   cm::controllers::MasterController masterController;
 
   QQmlApplicationEngine engine;
+
+  qDebug() << masterController.navigationController();
 
   engine.rootContext()->setContextProperty(QStringLiteral("masterController"), &masterController);
 

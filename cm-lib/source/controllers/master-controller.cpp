@@ -10,11 +10,11 @@ namespace cm {
       Implementation (MasterController* _masterController)
         : masterController(_masterController)
       {
-
+        navigationController = new NavigationController(masterController);
       }
 
       MasterController* masterController { nullptr};
-      NavigationController* navigationController {nullptr};
+      NavigationController* navigationController { nullptr };
       QString welcomeMessage = QStringLiteral("Welcome to Client Management app!");
     };
 

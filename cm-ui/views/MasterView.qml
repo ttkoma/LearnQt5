@@ -27,10 +27,26 @@ Window {
             top: parent.top
             bottom: parent.bottom
         }
+        Column {
+            Button {
+                text: "Dashboard"
+                onClicked: masterController.ui_navigationController.goDashBoardView()
+            }
+            Button {
+                text: "New Client"
+                onClicked: masterController.ui_navigationController.goCreateClientView()
+            }
+            Button {
+                text: "Find Client"
+                onClicked: masterController.ui_navigationController.goFindClientView()
+            }
+        }
+
     }
 
     StackView {
         id: contentFrame
+        clip: true
         anchors {
             left: navigationBar.right
             right: parent.right
