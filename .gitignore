@@ -14,3 +14,7 @@ cm-solution\.pro\.user
 Makefile
 
 \.qmake\.stash
+
+cm-tests/target_wrapper\.sh
+
+linux_gcc_x64_debug
