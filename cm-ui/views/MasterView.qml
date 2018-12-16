@@ -2,8 +2,10 @@ import QtQuick 2.9
 import QtQuick.Window 2.2
 import QtQuick.Controls 2.4
 import CM 1.0
+import assets 1.0
+import components 1.0
 
-Window {
+ApplicationWindow {
     id: contentContainer
     visible: true
     width: 640
@@ -24,29 +26,8 @@ Window {
                                                      }))
     }
 
-    Rectangle {
+    NavigationBar {
         id: navigationBar
-        width: 100
-        color: "#000000"
-        anchors {
-            left: parent.left
-            top: parent.top
-            bottom: parent.bottom
-        }
-        Column {
-            Button {
-                text: "Dashboard"
-                onClicked: masterController.ui_navigationController.goDashBoardView()
-            }
-            Button {
-                text: "New Client"
-                onClicked: masterController.ui_navigationController.goCreateClientView()
-            }
-            Button {
-                text: "Find Client"
-                onClicked: masterController.ui_navigationController.goFindClientView()
-            }
-        }
     }
 
     StackView {
