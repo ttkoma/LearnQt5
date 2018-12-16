@@ -21,6 +21,7 @@ namespace cm {
       void goCreateClientView();
       void goDashBoardView();
       void goFindClientView();
+      void goSettingsView();
       void goEditClientView(cm::models::Client *client);
 
     };

@@ -4,16 +4,17 @@ import QtQuick 2.9
 Item {
 
     readonly property color colourBackground: "#efefef"
-    property alias navBar: navbar
+    property alias navBar: _navbar
+    property alias icons: _icons
 
     Item {
-        id: navbar
+        id: _navbar
         readonly property color colourNavigationBarBackground: "#000000"
         readonly property color colourNavigationBarIcon: "#ffffff"
         readonly property color colourNavigationBarFont: "#ffffff"
 
-        readonly property int pixelSizeNavigationBarIcon: 36
-        readonly property int pixelSizeNavigationBarText: 22
+        readonly property alias pixelSizeNavigationBarIcon: _icons.pixelSizeNavigationBarIcon
+        readonly property int pixelSizeNavigationBarText: 20
         readonly property real widthNavigationButtonIcon: 80
 
         readonly property real heightNavigationButtonIcon: widthNavigationButtonIcon
@@ -29,10 +30,25 @@ Item {
         readonly property real heightNavigationBarExpanded: widthNavigationButton
     }
 
-    property alias fontawesome: fontAwesomeLoader.name
 
-    FontLoader {
-        id: fontAwesomeLoader
-        source: "qrc:/assets/fontawesome.otf"
+    Item {
+        id: _icons
+        property alias name: fontIconsLoader.name
+        property bool useMdiFont: true
+
+        property int pixelSizeNavigationBarIcon: useMdiFont ? 32 : 24
+
+        FontLoader {
+            id: fontIconsLoader
+            source: _icons.useMdiFont ? "qrc:/assets/materialdesignicons.ttf" : "qrc:/assets/fontawesome.otf"
+        }
+
+        readonly property string i_menu: useMdiFont ? "\uf35c" : "\uf0c9"
+        readonly property string i_menu_open: useMdiFont ? "\ufb87" : "\uf0c9"
+        readonly property string i_dashboard: useMdiFont ? "\uf56e" : "\uf015"
+        readonly property string i_newclient: useMdiFont ? "\uf014" : "\uf234"
+        readonly property string i_search: useMdiFont ? "\uf016" : "\uf002"
+        readonly property string i_settings: useMdiFont ? "\uf493" : "\uf013"
+
     }
 }

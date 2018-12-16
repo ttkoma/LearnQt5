@@ -24,6 +24,7 @@ ApplicationWindow {
                                                      "EditClientView.qml", {
                                                          "selectedClient": client
                                                      }))
+        onGoSettingsView: contentFrame.replace(Qt.resolvedUrl("SettingsView.qml"))
     }
 
     NavigationBar {
@@ -43,6 +44,7 @@ ApplicationWindow {
     }
 
     Component.onCompleted: {
+        Style.icons.useMdiFont = true
         contentFrame.replace(Qt.resolvedUrl("DashBoardView.qml"))
     }
 }

@@ -5,7 +5,6 @@ Item {
     property bool isCollapsed: true
 
     width: isCollapsed ? Style.navBar.widthNavigationBarCollapsed : Style.navBar.heightNavigationBarExpanded
-    //clip: true
     anchors {
         left: parent.left
         top: parent.top
@@ -20,30 +19,41 @@ Item {
 
         Column {
             width: parent.width
-
+            height: parent.height
             NavigationButton {
-                iconCharacters: "\uf0c9"
+                iconCharacters: isCollapsed ? Style.icons.i_menu : Style.icons.i_menu_open
                 description: isCollapsed ? "" : "MENU"
                 hoverColour: "#993333"
                 onNavigationButtonClicked: isCollapsed = !isCollapsed
             }
             NavigationButton {
-                iconCharacters: "\uf015"
+                iconCharacters: Style.icons.i_dashboard
                 description: "Dashboard"
                 hoverColour: "#dc8a00"
                 onNavigationButtonClicked: masterController.ui_navigationController.goDashBoardView()
             }
             NavigationButton {
-                iconCharacters: "\uf234"
+                iconCharacters: Style.icons.i_newclient
                 description: "New Client"
                 hoverColour: "#dccd00"
                 onNavigationButtonClicked: masterController.ui_navigationController.goCreateClientView()
             }
             NavigationButton {
-                iconCharacters: "\uf002"
+                iconCharacters: Style.icons.i_search
                 description: "Find Client"
                 hoverColour: "#8aef63"
                 onNavigationButtonClicked: masterController.ui_navigationController.goFindClientView()
+            }
+            Item {
+                id: expander
+                height: parent.height - (parent.children.length-1)*Style.navBar.heightNavigationButton
+                width: 1
+            }
+            NavigationButton {
+                iconCharacters: Style.icons.i_settings
+                description: "Settings"
+                hoverColour: "#993333"
+                onNavigationButtonClicked: masterController.ui_navigationController.goSettingsView()
             }
         }
     }

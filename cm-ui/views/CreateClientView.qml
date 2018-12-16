@@ -2,6 +2,7 @@ import QtQuick 2.9
 import assets 1.0
 
 Item {
+    objectName: "createClientView"
     Rectangle {
         anchors.fill: parent
         color: Style.colourBackground
@@ -13,7 +14,3 @@ Item {
     }
 }
 
-/*##^## Designer {
-    D{i:0;autoSize:true;height:480;width:640}
-}
- ##^##*/

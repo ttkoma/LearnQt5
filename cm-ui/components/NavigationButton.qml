@@ -24,12 +24,13 @@ Item {
                 height: Style.navBar.heightNavigationButtonIcon
                 color: Style.navBar.colourNavigationBarIcon
                 font {
-                    family: Style.fontawesome
+                    family: Style.icons.name
                     pixelSize: Style.navBar.pixelSizeNavigationBarIcon
                 }
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
                 text: "\uf11a"
+
             }
             Text {
                 id: textDescription
