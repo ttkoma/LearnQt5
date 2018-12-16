@@ -18,3 +18,7 @@ Makefile
 cm-tests/target_wrapper\.sh
 
 linux_gcc_x64_debug
+
+*.autosave
+
+cm-quick-tests/target_wrapper\.sh

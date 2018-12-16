@@ -4,18 +4,24 @@ import QtQuick.Controls 2.4
 import CM 1.0
 
 Window {
-    id:contentContainer
+    id: contentContainer
     visible: true
     width: 640
     height: 480
-    title: qsTr("Client Management")
+    title: qsTr("Client Management - " + "Qt " + QtQmlVersion)
 
     Connections {
         target: masterController.ui_navigationController
-        onGoCreateClientView: contentFrame.replace(Qt.resolvedUrl("CreateClientView.qml"));
-        onGoDashBoardView:  contentFrame.replace(Qt.resolvedUrl("DashBoardView.qml"));
-        onGoFindClientView: contentFrame.replace(Qt.resolvedUrl("FindClientView.qml"));
-        onGoEditClientView: contentFrame.replace(Qt.resolvedUrl("EditClientView.qml", {selectedClient: client}));
+        onGoCreateClientView: contentFrame.replace(Qt.resolvedUrl(
+                                                       "CreateClientView.qml"))
+        onGoDashBoardView: contentFrame.replace(Qt.resolvedUrl(
+                                                    "DashBoardView.qml"))
+        onGoFindClientView: contentFrame.replace(Qt.resolvedUrl(
+                                                     "FindClientView.qml"))
+        onGoEditClientView: contentFrame.replace(Qt.resolvedUrl(
+                                                     "EditClientView.qml", {
+                                                         "selectedClient": client
+                                                     }))
     }
 
     Rectangle {
@@ -41,7 +47,6 @@ Window {
                 onClicked: masterController.ui_navigationController.goFindClientView()
             }
         }
-
     }
 
     StackView {

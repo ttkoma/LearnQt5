@@ -1,8 +1,10 @@
 import QtQuick 2.9
+import assets 1.0
 
 Item {
     Rectangle {
-        color: "#f4c842"
+        anchors.fill: parent
+        color: Style.colourBackground
 
         Text {
             anchors.centerIn: parent

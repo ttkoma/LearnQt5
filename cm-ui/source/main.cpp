@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <qtqmlversion.h>
 #include <QQmlContext>
 
 #include <cm-lib_global.h>
@@ -20,10 +21,9 @@ int main(int argc, char *argv[])
   cm::controllers::MasterController masterController;
 
   QQmlApplicationEngine engine;
-
-  qDebug() << masterController.navigationController();
-
+  engine.addImportPath("qrc:/");
   engine.rootContext()->setContextProperty(QStringLiteral("masterController"), &masterController);
+  engine.rootContext()->setContextProperty("QtQmlVersion", QTQML_VERSION_STR);
 
   engine.load(QUrl(QStringLiteral("qrc:/views/MasterView.qml")));
 
