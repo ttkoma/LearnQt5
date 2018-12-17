@@ -20,7 +20,6 @@ TestCase {
 
     function test_NavigationController() {
         var navController = masterController.ui_navigationController;
-        console.log(navController)
         verify(navController !== null)
     }
 
