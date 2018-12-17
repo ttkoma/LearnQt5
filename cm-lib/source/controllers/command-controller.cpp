@@ -35,7 +35,7 @@ namespace cm {
 
     }
 
-    QQmlListProperty<Command> CommandController::ui_createClientViewContextCommands()
+    QQmlListProperty<Command> CommandController::createClientViewContextCommands()
     {
       return QQmlListProperty<Command>(this, implementation->createClientView_Commands);
     }

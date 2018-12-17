@@ -14,14 +14,14 @@ namespace cm {
     {
       Q_OBJECT
       Q_PROPERTY(QQmlListProperty<cm::framework::Command> ui_createClientViewContextCommands
-                 READ ui_createClientViewContextCommands CONSTANT)
+                 READ createClientViewContextCommands CONSTANT)
 
     public:
       explicit CommandController(QObject *parent = nullptr);
       ~CommandController();
 
       QQmlListProperty<framework::Command>
-      ui_createClientViewContextCommands();
+      createClientViewContextCommands();
 
     public slots:
       void onCreateClientViewExecuted();
