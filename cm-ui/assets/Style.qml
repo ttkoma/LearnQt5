@@ -64,6 +64,8 @@ Item {
         readonly property string i_newclient: useMdiFont ? "\uf014" : "\uf234"
         readonly property string i_search: useMdiFont ? "\uf016" : "\uf002"
         readonly property string i_settings: useMdiFont ? "\uf493" : "\uf013"
+        readonly property string i_save: useMdiFont ? "\uf193" : "\uf0c7"
+        readonly property string mdi_send: useMdiFont ? "\uf48a" : "\u0bbb"
 
     }
 }
