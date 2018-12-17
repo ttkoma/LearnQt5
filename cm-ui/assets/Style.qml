@@ -5,6 +5,7 @@ Item {
 
     readonly property color colourBackground: "#efefef"
     property alias navBar: _navbar
+    property alias commandBar: _commandBar
     property alias icons: _icons
 
     Item {
@@ -44,7 +45,6 @@ Item {
         readonly property int pixelSizeIcon: 32
         readonly property int pixelSizeText: 12
     }
-
 
     Item {
         id: _icons

@@ -19,7 +19,7 @@ Item {
             anchors.verticalCenterOffset: -10
             text: command.ui_iconCharacter
             font {
-                family: Style.fontawesome
+                family: Style.icons.name
                 pixelSize: Style.commandBar.pixelSizeIcon
             }
             color: command.ui_canExecute ? Style.commandBar.colourFont : Style.commandBar.colourFontDisabled
