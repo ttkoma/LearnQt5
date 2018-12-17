@@ -28,3 +28,4 @@ cm-ui/assets_qmlcache\.qrc
 cm-ui/components_qmlcache\.qrc
 
 cm-ui/assets_Style_qml\.cpp
+cm-ui/object_script.cm-ui
