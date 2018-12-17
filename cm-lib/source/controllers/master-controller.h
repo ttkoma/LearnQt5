@@ -7,6 +7,7 @@
 
 #include <cm-lib_global.h>
 #include <controllers/navigation-controller.h>
+#include <controllers/command-controller.h>
 
 namespace cm {
   namespace controllers {
@@ -21,9 +22,11 @@ namespace cm {
       Q_PROPERTY(QString ui_welcomeMessage READ welcomeMessage CONSTANT)
       Q_PROPERTY(cm::controllers::NavigationController* ui_navigationController
                  READ navigationController CONSTANT)
-      //WRITE setUi_navigationController NOTIFY ui_navigationControllerChanged)
+      Q_PROPERTY(cm::controllers::CommandController* ui_commandController
+                 READ commandController CONSTANT)
 
       NavigationController* navigationController();
+      CommandController* commandController();
       const QString& welcomeMessage() const;
 
     private:

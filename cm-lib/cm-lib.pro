@@ -26,12 +26,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 INCLUDEPATH += source
 
 SOURCES += source/models/client.cpp \
-    source/controllers/master-controller.cpp
+    source/controllers/master-controller.cpp \
+    source/framework/command.cpp \
+    source/controllers/command-controller.cpp
 
 HEADERS += source/cm-lib_global.h  \
         source/models/client.h \
     source/controllers/master-controller.h \
-    source/controllers/navigation-controller.h
+    source/controllers/navigation-controller.h \
+    source/framework/command.h \
+    source/controllers/command-controller.h
 
 include(../qmake-target-platform.pri)
 include(../qmake-destination-path.pri)
