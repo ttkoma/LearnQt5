@@ -30,6 +30,8 @@ Item {
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
                 text: "\uf11a"
+                renderType: Text.NativeRendering
+                antialiasing: true
 
             }
             Text {

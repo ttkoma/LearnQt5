@@ -18,7 +18,14 @@ namespace cm {
          QObject::connect(createClientView_SaveCommand, &Command::executed,
                  commandController, &CommandController::onCreateClientViewExecuted);
 
+         Command* createClientView_UpdateCommand =
+             new Command(commandController, QChar( 0xf0c7 ), "Update");
+
+         QObject::connect(createClientView_UpdateCommand, &Command::executed,
+                 commandController, &CommandController::onCreateClientViewExecuted);
+
          createClientView_Commands.append(createClientView_SaveCommand);
+         createClientView_Commands.append(createClientView_UpdateCommand);
       }
 
       CommandController* commandController;

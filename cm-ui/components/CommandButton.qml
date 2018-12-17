@@ -17,7 +17,7 @@ Item {
             id: iconText
             anchors.centerIn: parent
             anchors.verticalCenterOffset: -10
-            text: command.ui_iconCharacter
+            text: Style.icons["i_settings"] //command.ui_iconCharacter
             font {
                 family: Style.icons.name
                 pixelSize: Style.commandBar.pixelSizeIcon

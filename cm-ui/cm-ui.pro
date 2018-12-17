@@ -2,6 +2,8 @@ QT += quick qml
 CONFIG += c++14
 TEMPLATE = app
 
+CONFIG += debug
+
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
 # depend on your compiler). Refer to the documentation for the
@@ -32,6 +34,9 @@ include(../qmake-destination-path.pri)
 
 unix:!macx: LIBS += -L$$PWD/../binaries/$$DESTINATION_PATH -lcm-lib
 
+win32: LIBS += -L$$PWD/../binaries/$$DESTINATION_PATH -lcm-lib
+#else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../binaries/$$DESTINATION_PATH/../debug/ -lcm-lib
+
 INCLUDEPATH += $$PWD/../cm-lib/source
 DEPENDPATH += $$PWD/../cm-lib/source
 
@@ -47,3 +52,4 @@ message($$TARGET out dir $${DESTDIR})
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+

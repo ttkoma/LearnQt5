@@ -34,6 +34,7 @@ UI_DIR = $$PWD/build/$$DESTINATION_PATH/.ui
 INCLUDEPATH += $${MOC_DIR}
 
 unix:!macx: LIBS += -L$$PWD/../binaries/$$DESTINATION_PATH -lcm-lib
+win32: LIBS += -L$$PWD/../binaries/$$DESTINATION_PATH -lcm-lib
 
 
 INCLUDEPATH += $$PWD/../cm-lib/source
