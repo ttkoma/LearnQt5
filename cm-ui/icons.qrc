@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file alias="dialer-sip.svg">icons/dialer_sip.svg</file>
+        <file alias="menu.svg">icons/menu.svg</file>
+        <file alias="menu-open.svg">icons/menu-open.svg</file>
+        <file alias="search.svg">icons/search.svg</file>
+        <file alias="dashboard.svg">icons/baseline-dashboard-24px.svg</file>
+        <file alias="image.svg">icons/outline-image-24px.svg</file>
+    </qresource>
+</RCC>

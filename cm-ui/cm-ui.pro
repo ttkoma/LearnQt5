@@ -1,4 +1,4 @@
-QT += quick qml
+QT += quick qml svg
 CONFIG += c++14
 TEMPLATE = app
 
@@ -21,7 +21,8 @@ SOURCES += source/main.cpp \
 
 RESOURCES += views.qrc \
     assets.qrc \
-    components.qrc
+    components.qrc \
+    icons.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH += $$PWD

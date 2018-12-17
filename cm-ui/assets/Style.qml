@@ -51,7 +51,7 @@ Item {
         property alias name: fontIconsLoader.name
         property bool useMdiFont: true
 
-        property int pixelSizeNavigationBarIcon: useMdiFont ? 48 : 42
+        property int pixelSizeNavigationBarIcon: useMdiFont ? 48 : 40
 
         FontLoader {
             id: fontIconsLoader
