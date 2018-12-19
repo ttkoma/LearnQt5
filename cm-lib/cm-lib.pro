@@ -9,6 +9,7 @@ QT       -= gui
 TARGET = cm-lib
 TEMPLATE = lib
 CONFIG += sharedlib c++14
+CONFIG -= debug_and_release
 
 DEFINES += CMLIB_LIBRARY
 
@@ -50,7 +51,7 @@ MOC_DIR = $$PWD/build/$$DESTINATION_PATH/.moc
 RCC_DIR = $$PWD/build/$$DESTINATION_PATH/.qrc
 UI_DIR = $$PWD/build/$$DESTINATION_PATH/.ui
 
-#message($${TARGET} out dir $${DESTDIR})
+message($${TARGET} out dir $${DESTDIR})
 
 unix {
     target.path = /usr/lib

@@ -1,5 +1,6 @@
 QT += quick qml
 CONFIG += c++14
+CONFIG -= debug_and_release
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -31,6 +32,7 @@ include(../qmake-target-platform.pri)
 include(../qmake-destination-path.pri)
 
 unix:!macx: LIBS += -L$$PWD/../binaries/$$DESTINATION_PATH -lcm-lib
+win32: LIBS += -L$$PWD/../binaries/$$DESTINATION_PATH -lcm-lib
 
 INCLUDEPATH += $$PWD/../cm-lib/source
 DEPENDPATH += $$PWD/../cm-lib/source
