@@ -34,7 +34,8 @@ SOURCES += source/models/client.cpp \
     source/data/string-decorator.cpp \
     source/data/int-decorator.cpp \
     source/data/datetime-decorator.cpp \
-    source/data/enumerator-decorator.cpp
+    source/data/enumerator-decorator.cpp \
+    source/data/entity.cpp
 
 HEADERS += source/cm-lib_global.h  \
         source/models/client.h \
@@ -46,7 +47,8 @@ HEADERS += source/cm-lib_global.h  \
     source/data/string-decorator.h \
     source/data/int-decorator.h \
     source/data/datetime-decorator.h \
-    source/data/enumerator-decorator.h
+    source/data/enumerator-decorator.h \
+    source/data/entity.h
 
 include(../qmake-target-platform.pri)
 include(../qmake-destination-path.pri)
