@@ -13,6 +13,7 @@ public:
 
   std::map<QString, Entity *> childEntities;
   std::map<QString, DataDecorator *> dataDecorators;
+  std::map<QString, EntityCollectionBase *> childCollections;
 };
 
 Entity::Entity(QObject *parent, const QString &key) : QObject(parent) {
@@ -77,6 +78,17 @@ DataDecorator *Entity::addDataItem(DataDecorator *dataDecorator) {
   }
 
   return dataDecorator;
+}
+
+EntityCollectionBase *
+Entity::addChildCollection(EntityCollectionBase *entityCollection) {
+  if (implementation->childCollections.find(entityCollection->getKey()) ==
+      std::end(implementation->childCollections)) {
+    implementation->childCollections[entityCollection->getKey()] =
+        entityCollection;
+    emit childCollectionsChanged(entityCollection->getKey());
+  }
+  return entityCollection;
 }
 
 } // namespace data

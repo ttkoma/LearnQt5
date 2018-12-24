@@ -9,6 +9,7 @@
 
 #include <cm-lib_global.h>
 #include <data/data-decorator.h>
+#include <data/entity-collection.h>
 
 namespace cm {
 namespace data {
@@ -28,10 +29,16 @@ public:
 signals:
   void childEntitiesChanged();
   void dataDecoratorsChanged();
+  void childCollectionsChanged(const QString &collectionKey);
 
 protected:
+  // Links
   Entity *addEntity(Entity *childEntity, const QString &key);
+  // Attributes
   DataDecorator *addDataItem(DataDecorator *dataDecorator);
+  // SubGrids - *:N refs
+  EntityCollectionBase *
+  addChildCollection(EntityCollectionBase *entityCollection);
 
 protected:
   class Implementation;

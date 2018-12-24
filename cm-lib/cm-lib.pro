@@ -48,7 +48,8 @@ HEADERS += source/cm-lib_global.h  \
     source/data/int-decorator.h \
     source/data/datetime-decorator.h \
     source/data/enumerator-decorator.h \
-    source/data/entity.h
+    source/data/entity.h \
+    source/data/entity-collection.h
 
 include(../qmake-target-platform.pri)
 include(../qmake-destination-path.pri)
