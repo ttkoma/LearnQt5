@@ -1,5 +1,7 @@
 #include "entity.h"
 
+#include <QJsonArray>
+
 namespace cm {
 namespace data {
 
@@ -42,6 +44,12 @@ void Entity::update(const QJsonObject &jsonObject) {
        implementation->childEntities) {
     entityPair.second->update(jsonObject.value(entityPair.first).toObject());
   };
+  // Update childCollections
+  for (std::pair<QString, EntityCollectionBase *> childCollectionPair :
+       implementation->childCollections) {
+    childCollectionPair.second->update(
+        jsonObject.value(childCollectionPair.first).toArray());
+  }
 }
 
 QJsonObject Entity::toJson() const {
@@ -56,6 +64,16 @@ QJsonObject Entity::toJson() const {
   for (std::pair<QString, Entity *> childEntityPair :
        implementation->childEntities) {
     returnValue.insert(childEntityPair.first, childEntityPair.second->toJson());
+  }
+  // Add childCollection
+  for (std::pair<QString, EntityCollectionBase *> childCollectionPair :
+       implementation->childCollections) {
+    QJsonArray entityArray;
+    for (Entity *entity : childCollectionPair.second->baseEntities()) {
+        entityArray.append(entity->toJson());
+    }
+
+    returnValue.insert(childCollectionPair.first, entityArray);
   }
 
   return returnValue;
