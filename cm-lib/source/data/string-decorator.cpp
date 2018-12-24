@@ -3,65 +3,47 @@
 #include <QVariant>
 
 namespace cm {
-  namespace data {
-    class StringDecorator::Implementation
-    {
-    public:
-      Implementation(StringDecorator* _stringDecorator, const QString& _value)
-        : stringDecorator(_stringDecorator)
-        , value(_value)
-      {
+namespace data {
+class StringDecorator::Implementation {
+public:
+  Implementation(StringDecorator *_stringDecorator, const QString &_value)
+      : stringDecorator(_stringDecorator), value(_value) {}
 
-      }
+  StringDecorator *stringDecorator;
+  QString value;
+};
 
-      StringDecorator* stringDecorator;
-      QString value;
+StringDecorator::StringDecorator(Entity *parentEntity, const QString &key,
+                                 const QString &label, const QString &value)
+    : DataDecorator(parentEntity, key, label) {
+  implementation.reset(new Implementation(this, value));
+}
 
-    };
+StringDecorator::~StringDecorator() {}
 
-    StringDecorator::StringDecorator(Entity* parentEntity, const QString& key,
-                                     const QString& label, const QString& value)
-    : DataDecorator(parentEntity, key, label)
-    {
-      implementation.reset(new Implementation(this, value));
-    }
+const QString &StringDecorator::value() const { return implementation->value; }
 
-    StringDecorator::~StringDecorator()
-    {
-    }
+StringDecorator &StringDecorator::setValue(const QString &value) {
+  if (value != implementation->value) {
+    // ...Validation here if required...
+    implementation->value = value;
+    emit valueChanged();
+  }
 
-    const QString& StringDecorator::value() const
-    {
-      return implementation->value;
-    }
+  return *this;
+}
 
-    StringDecorator& StringDecorator::setValue(const QString& value)
-    {
-      if(value != implementation->value) {
-      // ...Validation here if required...
-      implementation->value = value;
-      emit valueChanged();
-      }
+QJsonValue StringDecorator::jsonValue() const {
+  return QJsonValue::fromVariant(QVariant(implementation->value));
+}
 
-      return *this;
-    }
-
-    QJsonValue StringDecorator::jsonValue() const
-    {
-      return QJsonValue::fromVariant(QVariant(implementation->value));
-    }
-
-    void StringDecorator::update(const QJsonObject& _jsonObject)
-    {
-      if (_jsonObject.contains(key())) {
-          setValue(_jsonObject.value(key()).toString());
-      } else {
-          setValue("");
-      }
-    }
-
-
+void StringDecorator::update(const QJsonObject &_jsonObject) {
+  if (_jsonObject.contains(key())) {
+    setValue(_jsonObject.value(key()).toString());
+  } else {
+    setValue("");
   }
 }
 
-
+} // namespace data
+} // namespace cm

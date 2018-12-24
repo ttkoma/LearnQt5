@@ -31,7 +31,10 @@ SOURCES += source/models/client.cpp \
     source/framework/command.cpp \
     source/controllers/command-controller.cpp \
     source/data/data-decorator.cpp \
-    source/data/string-decorator.cpp
+    source/data/string-decorator.cpp \
+    source/data/int-decorator.cpp \
+    source/data/datetime-decorator.cpp \
+    source/data/enumerator-decorator.cpp
 
 HEADERS += source/cm-lib_global.h  \
         source/models/client.h \
@@ -40,7 +43,10 @@ HEADERS += source/cm-lib_global.h  \
     source/framework/command.h \
     source/controllers/command-controller.h \
     source/data/data-decorator.h \
-    source/data/string-decorator.h
+    source/data/string-decorator.h \
+    source/data/int-decorator.h \
+    source/data/datetime-decorator.h \
+    source/data/enumerator-decorator.h
 
 include(../qmake-target-platform.pri)
 include(../qmake-destination-path.pri)
