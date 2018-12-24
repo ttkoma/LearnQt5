@@ -16,7 +16,6 @@ Item {
         id: background
         anchors.fill: parent
         color: Style.navBar.colourNavigationBarBackground
-
         Row {
             Text {
                 id: textIcon

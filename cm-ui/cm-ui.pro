@@ -1,5 +1,6 @@
 QT += quick qml svg
 CONFIG += c++14
+CONFIG -= debug_and_release
 TEMPLATE = app
 
 CONFIG += debug
@@ -34,6 +35,7 @@ include(../qmake-target-platform.pri)
 include(../qmake-destination-path.pri)
 
 unix:!macx: LIBS += -L$$PWD/../binaries/$$DESTINATION_PATH -lcm-lib
+win32: LIBS += -L$$PWD/../binaries/$$DESTINATION_PATH -lcm-lib
 
 win32: LIBS += -L$$PWD/../binaries/$$DESTINATION_PATH -lcm-lib
 #else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../binaries/$$DESTINATION_PATH/../debug/ -lcm-lib

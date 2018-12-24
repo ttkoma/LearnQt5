@@ -3,7 +3,7 @@ QT -= gui
 
 CONFIG += qt console warn_on depend_includepath testcase
 CONFIG += c++14
-CONFIG -= app_bundle
+CONFIG -= app_bundle debug_and_release
 
 TEMPLATE = app
 
@@ -23,7 +23,7 @@ MOC_DIR = $$PWD/build/$$DESTINATION_PATH/.moc
 RCC_DIR = $$PWD/build/$$DESTINATION_PATH/.qrc
 UI_DIR = $$PWD/build/$$DESTINATION_PATH/.ui
 
-#message($$TARGET out dir $${DESTDIR})
+message($$TARGET out dir $${DESTDIR})
 #INCLUDEPATH += $${MOC_DIR}
 
 

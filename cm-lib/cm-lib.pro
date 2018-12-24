@@ -9,6 +9,7 @@ QT       -= gui
 TARGET = cm-lib
 TEMPLATE = lib
 CONFIG += sharedlib c++14
+CONFIG -= debug_and_release
 
 DEFINES += CMLIB_LIBRARY
 
@@ -28,14 +29,27 @@ INCLUDEPATH += source
 SOURCES += source/models/client.cpp \
     source/controllers/master-controller.cpp \
     source/framework/command.cpp \
-    source/controllers/command-controller.cpp
+    source/controllers/command-controller.cpp \
+    source/data/data-decorator.cpp \
+    source/data/string-decorator.cpp \
+    source/data/int-decorator.cpp \
+    source/data/datetime-decorator.cpp \
+    source/data/enumerator-decorator.cpp \
+    source/data/entity.cpp
 
 HEADERS += source/cm-lib_global.h  \
         source/models/client.h \
     source/controllers/master-controller.h \
     source/controllers/navigation-controller.h \
     source/framework/command.h \
-    source/controllers/command-controller.h
+    source/controllers/command-controller.h \
+    source/data/data-decorator.h \
+    source/data/string-decorator.h \
+    source/data/int-decorator.h \
+    source/data/datetime-decorator.h \
+    source/data/enumerator-decorator.h \
+    source/data/entity.h \
+    source/data/entity-collection.h
 
 include(../qmake-target-platform.pri)
 include(../qmake-destination-path.pri)
@@ -46,7 +60,7 @@ MOC_DIR = $$PWD/build/$$DESTINATION_PATH/.moc
 RCC_DIR = $$PWD/build/$$DESTINATION_PATH/.qrc
 UI_DIR = $$PWD/build/$$DESTINATION_PATH/.ui
 
-#message($${TARGET} out dir $${DESTDIR})
+message($${TARGET} out dir $${DESTDIR})
 
 unix {
     target.path = /usr/lib

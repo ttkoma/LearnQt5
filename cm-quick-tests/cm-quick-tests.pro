@@ -1,10 +1,9 @@
 QT += testlib
 QT -= gui
 
-CONFIG += qt console testcase
+CONFIG += qt console testcase qmltestcase
 CONFIG += c++14
-CONFIG -= app_bundle
-CONFIG += qmltestcase
+CONFIG -= app_bundle debug_and_release
 
 TEMPLATE = app
 
@@ -29,7 +28,7 @@ MOC_DIR = $$PWD/build/$$DESTINATION_PATH/.moc
 RCC_DIR = $$PWD/build/$$DESTINATION_PATH/.qrc
 UI_DIR = $$PWD/build/$$DESTINATION_PATH/.ui
 
-#message($${TARGET} out dir $${DESTDIR})
+message($${TARGET} out dir $${DESTDIR})
 
 INCLUDEPATH += $${MOC_DIR}
 
